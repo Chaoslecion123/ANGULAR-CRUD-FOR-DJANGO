@@ -1,0 +1,44 @@
+<div>
+  <div *ngIf="status=='succes'">
+    <h3> se creo los datos correctamente</h3>
+    <a [routerLink]="['/detail',save_project.id]">mira los cambios</a>
+  </div>
+
+   <div *ngIf="status == 'failed'">
+    <h3> error al crear los datos</h3>
+  </div>
+
+  <form #portafolioForm="ngForm" (ngSubmit)="onSubmit(portafolioForm)">
+    <p>
+      <label for="title">Titulo</label>
+      <input type="text" name="title" #title="ngModel" [(ngModel)]="portafolio.title" required/>
+
+      <span  class="form_error" *ngIf="title.touched && !title.valid">
+				el nombre es obligatorio
+			</span>
+    </p>
+
+    <p *ngIf="portafolio">
+      <label for="description">Descripcion</label>
+      <textarea name="description" #description="ngModel" [(ngModel)]="portafolio.description" required></textarea>
+
+      <span  class="form_error" *ngIf="description.touched && !description.valid">
+				la description es obligatorio
+			</span>
+    </p>
+
+    <p>
+      <label for="langs">Lenguajes</label>
+      <input type="text" name="langs" #langs="ngModel" [(ngModel)]="portafolio.langs" required>
+      <span  class="form_error" *ngIf="langs.touched && !langs.valid">
+			  este campo es obligatorio
+			</span>
+    </p>
+
+  
+  <input type="submit" value="enviar">
+  </form>
+
+
+
+</div>

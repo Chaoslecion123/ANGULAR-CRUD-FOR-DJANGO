@@ -1,0 +1,28 @@
+
+<div>
+  <h3>Proyectos</h3>
+
+  <ul>
+    <li><a [routerLink]="['create']" [routerLinkActive]="['actived']">crear</a></li>
+  </ul>
+*************************************************************************************<br>
+<p id="titulo">{{titulo}}</p>
+  
+   <ul class="portafolio">
+      <li *ngFor="let porta of portafolios" class="porta">
+      <h1>{{nombre}}:</h1>
+      <h3><a [routerLink]="['detail', porta.id]" [routerLinkActive]="['actived']">{{porta.title}}</a></h3>
+      <h1>{{lenguajes}}:</h1>
+      <h3>{{porta.langs}}</h3>
+      <!--
+        <div class="image">
+				<img src="{{porta.image}}" *ngIf="porta.image">
+			</div>
+      -->
+      
+      </li>
+   </ul>
+
+   
+
+</div>

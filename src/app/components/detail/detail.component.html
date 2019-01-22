@@ -1,0 +1,16 @@
+<div *ngIf="portafolio">
+  <p>{{portafolio.title}}</p>
+  <p>{{portafolio.description}}</p>
+  <p>{{portafolio.langs}}</p> 
+  <p *ngIf="confirm == false">
+    <a [routerLink]="['/edit', portafolio.id]" class="btnEditar">Editar</a><br>
+    <a (click)="setConfirm(true)">Eliminar</a>
+  </p>
+
+   <p *ngIf="confirm == true">
+   ¿estas seguro que quieres eliminar?<br>
+    <a (click)="setConfirm(false)" class="btnEditar">Cancelar</a><br>
+    <a (click)="deletePortafolio(portafolio.id)">Eliminar definitivamente</a>
+  </p>
+</div>
+  

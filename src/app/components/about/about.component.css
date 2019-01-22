@@ -1,0 +1,26 @@
+.portafolio{
+    color: brown;
+   
+}
+
+.porta{
+    border: solid 1px green;
+}
+
+.porta  {
+
+   list-style: none;
+}
+
+.porta h3{
+    
+    text-transform: uppercase;
+}
+
+#titulo{
+    text-transform: uppercase;
+    text-align: center;
+    background-color: darkgoldenrod;
+    color: black;
+    font-size: 25px;
+}
